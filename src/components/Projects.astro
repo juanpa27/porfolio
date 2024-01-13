@@ -1,0 +1,99 @@
+---
+import Tailwind from "./icons/Tailwind.astro";
+import React from "./icons/React.astro";
+import Spring from "./icons/Spring.astro";
+import Html from "./icons/Html.astro";
+import Css from "./icons/Css.astro";
+import Javascript from "./icons/Javascript.astro";
+import Php from "./icons/Php.astro";
+
+
+
+const TAGS = {
+    TAILWIND: {
+        name: "Tailwind CSS",
+        class: "bg-[#003159] text-white",
+        icon: Tailwind,
+    },
+    REACT: {
+        name: "React",
+        class: "bg-white text-black",
+        icon: React,
+    },
+    SPRING: {
+        name: "Spring Boot",
+        class: "text-white",
+        icon: Spring,
+    },
+    HTML: {
+        name: "HTML",
+        class: "text-white",
+        icon: Html,
+    },
+    CSS: {
+        name: "CSS",
+        class: "text-white",
+        icon: Css,
+    },
+    JAVASCRIPT: {
+        name: "JavaScript",
+        class: "text-white",
+        icon: Javascript,
+    },
+    PHP: {
+        name: "PHP",
+        class: "bg-[#777BB3] text-white",
+        icon: Php,
+    }
+
+};
+
+const PROJECTS = [
+  {
+    title: 'Consulta de Reposos',
+    description: 'Formulario de consulta de reposos médicos con generación de PDF y código QR.',	
+    image: 'https://via.placeholder.com/150',
+    link: 'https://juanpa27.github.io/reposos/',
+    github: 'https://github.com/juanpa27/reposos',
+    tags: [TAGS.TAILWIND, TAGS.REACT, TAGS.SPRING],
+  },
+  {
+    title: 'Proyecto 2',
+    description: 'loremp ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.',
+    image: 'https://via.placeholder.com/150',
+    link: 'https://www.google.com',
+    github: 'https://www.github.com',
+    tags: [TAGS.HTML, TAGS.CSS, TAGS.JAVASCRIPT, TAGS.PHP],
+  }
+];
+---
+{
+    PROJECTS.map(({title,description,image,link,github,tags}) => (
+            <div class="max-w-full rounded-lg shadow-lg mt-8">
+                <h5 class="mb-2 text-2xl font-semibold text-yellow-200">
+                    {title}
+                </h5>
+                
+
+                <p class="mb-3 text-lg font-normal text-gray-200 dark:text-gray-200 text-pretty">
+                    {description}
+                </p>
+                <ul class="flex gap-x-2 flex-row mb-2">
+                    {tags.map((tag) => (
+                        <span class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 border border-white/10`}>
+                            <tag.icon class="w-4 h-4" />
+                            {tag.name}
+                        </span>
+                    ))}    
+                </ul>
+                
+            </div>
+            
+            <img class="rounded shadow-2xl shadow-white/10" src="/images/reposos.webp" alt={title} />
+            
+        </div>
+    ))
+}
+
+
+

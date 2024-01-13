@@ -1,0 +1,33 @@
+---
+import ExperienceItem from "./ExperienceItem.astro";
+const EXPERIENCE = [
+    {
+        title: 'Desarrollador Web - Insituto de Previsión Social (IPS-Paraguay)',
+        company: 'Company',
+        location: 'local',
+        date: '2016 - Actualemnte',
+        description: 'Responsable de la creación de sitios web y aplicaciones web internas para el IPS, utilizando tecnologías como PHP, Jquery, JavaScript, CSS, Bootstrap, TailwindCSS entre otras.',
+    },
+    {
+        title: 'Product Designer',
+        company: 'Company',
+        location: 'Remote',
+        date: 'Feb 2019 - Feb 2020',
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis nec aliquet dui. Sed euismod, diam quis accumsan maximus, nisl nunc aliquam libero, vitae aliquam eros libero eu elit. Sed vitae nunc vitae nunc aliquam aliquam. Sed vitae nunc vitae nunc aliquam aliquam.',
+    }
+    
+];
+---
+<ol class="
+    relative 
+    border-s border-gray-200 
+    ml-3">                  
+   {
+    EXPERIENCE.map((experiencie)=> (
+        <li class="mb-10 ms-4">
+            <ExperienceItem {...experiencie} />    
+        </li>    
+    ))
+   }
+</ol>
+
