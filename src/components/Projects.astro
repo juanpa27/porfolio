@@ -9,6 +9,8 @@ import Javascript from "./icons/Javascript.astro";
 import Php from "./icons/Php.astro";
 import Demo from "./icons/Demo.astro";
 import Github from "./icons/Github.astro";
+import Badge from "./Badge.astro";
+import SocialPill from "./icons/SocialPill.astro";
 
 
 const TAGS = {
@@ -76,8 +78,23 @@ const PROJECTS = [
                     <span>{title}</span>
 
                     <span class="flex space-x-2">
-                        {link && <a href={link} target="_blank" aria-label="Preview" title="Preview" class="text-sm font-semibold hover:underline"> <Demo class="size-4 lg:size-4" /> </a>}
-                        {github && <a href={github} target="_blank" title="Github" aria-lebel="Github" class="text-sm font-semibold hover:underline"> <Github class="hover:to-white size-4 lg:size-4" /> </a>}
+                        {
+                            link && 
+                            <SocialPill href={link}  >
+                                
+                                    <Demo class="size-4 lg:size-4" /> 
+                                
+                            </SocialPill>
+                        }
+                        {
+                            github && 
+                            <SocialPill href={github} >
+                                
+                                  <Github class="hover:to-white size-4 lg:size-4" /> 
+                                
+                            </SocialPill>    
+                        }
+                            
                     </span>
                 </h5>
 
