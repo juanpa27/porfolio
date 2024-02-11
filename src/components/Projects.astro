@@ -11,6 +11,7 @@ import Demo from "./icons/Demo.astro";
 import Github from "./icons/Github.astro";
 import Badge from "./Badge.astro";
 import SocialPill from "./icons/SocialPill.astro";
+import LinkButton from "./LinkButton.astro";
 
 
 const TAGS = {
@@ -65,7 +66,7 @@ const PROJECTS = [
     title: 'Tickets para Soporte Técnico y Mantenimiento',
     description: 'Interfaz web para generación de tickets para soporte técnico y tickets para mantenimiento con integración a la API de Redmine.',
     image: ['/images/dmt.webp', '/images/dtic.webp'],
-    link: '',
+    link: 'https://portal.ips.gov.py/sistemas/dtic/',
     github: '',
     tags: [TAGS.HTML, TAGS.CSS, TAGS.JAVASCRIPT, TAGS.PHP],
   }
@@ -77,25 +78,7 @@ const PROJECTS = [
                 <h5 class="flex items-center justify-between mb-2 text-2xl font-semibold text-yellow-200">
                     <span>{title}</span>
 
-                    <span class="flex space-x-2">
-                        {
-                            link && 
-                            <SocialPill href={link}  >
-                                
-                                    <Demo class="size-4 lg:size-4" /> 
-                                
-                            </SocialPill>
-                        }
-                        {
-                            github && 
-                            <SocialPill href={github} >
-                                
-                                  <Github class="hover:to-white size-4 lg:size-4" /> 
-                                
-                            </SocialPill>    
-                        }
-                            
-                    </span>
+                    
                 </h5>
 
                 <p class="mb-3 text-lg font-normal text-gray-200 dark:text-gray-200 text-pretty">
@@ -103,7 +86,7 @@ const PROJECTS = [
                 </p>
                 <ul class="flex gap-x-2 flex-row mb-2">
                     {tags.map((tag) => (
-                        <span class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 border border-white/10`}>
+                        <span class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2`}>
                             <tag.icon class="w-4 h-4" />
                             {tag.name}
                         </span>
@@ -166,6 +149,27 @@ const PROJECTS = [
                     </>
                 )}
             </div>
+            <footer>
+                <span class="flex gap-x-4 mt-4">
+                        {
+                            link && 
+                            <LinkButton href={link}  >
+                                
+                                Ir al sitio <Demo class="size-6 lg:size-7" /> 
+                                
+                            </LinkButton>
+                        }
+                        {
+                            github && 
+                            <LinkButton href={github} >
+                                
+                                Ver código fuente <Github class="hover:to-white size-6 lg:size-7" /> 
+                                
+                            </LinkButton>    
+                        }
+                            
+                    </span>
+            </footer>
 
             
        

@@ -1,16 +1,19 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import SectionContainer from '../components/SectionContainer.astro';
+
+import AboutMe from '../components/AboutMe.astro';
+
+import Briefcase from '../components/icons/Briefcase.astro';
 import Card from '../components/Card.astro';
-import Badge from '../components/Badge.astro';
-import SocialPill from '../components/icons/SocialPill.astro';
+import Code from '../components/icons/Code.astro';
+import Experience from '../components/Experience.astro';
 import Github from '../components/icons/Github.astro';
 import Gmail from '../components/icons/Gmail.astro';
 import LinkedIn from '../components/icons/LinkedIn.astro';
-import Experience from '../components/Experience.astro';
-import Briefcase from '../components/icons/Briefcase.astro';
-import Code from '../components/icons/Code.astro';
+import ProfileCode from '../components/icons/ProfileCode.astro';
 import Projects from '../components/Projects.astro';
+import SectionContainer from '../components/SectionContainer.astro';
+import Hero from '../components/Hero.astro';
 
 
 ---
@@ -20,49 +23,10 @@ import Projects from '../components/Projects.astro';
 	description="Contrata a Juan Bellenzier como desarrollador web. Conoce su experiencia y proyectos realizados."
 	>
 	<main class="px-4">	
-		<SectionContainer class="py-44 pb-24">
-						<img 
-							class="rounded-full size-32 md:size-20 lg:size-24 xl:size-20 mb-4" 
-							src="/images/jb.jpg" 
-							alt="juanbellenzier"
-							
-			    		/>
-			<h1 class="text-white 
-					font-bold 
-					text-2xl 
-					md:text-4xl lg:text-5xl 
-					flex flex-row 
-					gap-x-4
-					pb-6 
-					lg:pb-10
-					">
-				Hola, soy Juan Bellenzier
-				<a 
-					target="_blank" 
-					href="https://www.linkedin.com/in/juan-bellenzier-66763710a/" 
-					class="flex justify-center items-center"
-				>
-				<Badge>Disponible para trabajar</Badge>
-			</a>
-			</h1>
-			<h2 class="text-xl lg:text-2xl text-wrap max-w-[700px]">
-				<span class="opacity-80">Desarrollador web con más de </span><span class="text-yellow-200/90">7 a&ntilde;os de experiencia</span>
-				en el desarrollo de aplicaciones web, con conocimientos en tecnologías como PHP, JavaScript, NodeJS, ReactJS, VueJS,Astro, entre otras.
-			</h2>
-			<nav class="flex gap-5 mt-10 flex-wrap">
-				<SocialPill href="https://github.com/juanpa27">  
-					<Github class="size-6 lg:size-7" />
-					GitHub
-				</SocialPill>
-				<SocialPill href="www.linkedin.com/in/juan-bellenzier-66763710a"> 
-					<LinkedIn class="size-5 lg:size-6" />
-					LinkedIn
-				</SocialPill>
-				<SocialPill href="mailto:jbellenzier@gmail.com"> 
-					<Gmail class="size-6 lg:size-8" />
-					jbellenzier@gmail.com
-				</SocialPill>
-			 </nav>
+		<SectionContainer class="py-16 md:py-36">
+			<Hero>
+				</slot>
+		 	</Hero>
 		</SectionContainer>
 
 		<SectionContainer id="experiencia">
@@ -78,6 +42,14 @@ import Projects from '../components/Projects.astro';
 				<Code class="size-8" />Proyectos
 			</h2>
 			<Projects />
+			
+		</SectionContainer>	
+
+		<SectionContainer id="sobre-mi">
+			<h2 class="text-3xl font-semibold text-white mb-6 flex gap-x-3 items-center"> 
+				<ProfileCode class="size-7" />Sobre mi
+			</h2>
+			<AboutMe />
 			
 		</SectionContainer>	
 	</main>

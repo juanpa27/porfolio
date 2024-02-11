@@ -1,17 +1,7 @@
-<span
-  class="text-sm 
-        font-semibold
-        me-2 px-2.5 
-        py-0.5 rounded 
-        bg-blue-700
-        text-white 
-        hover:bg-blue-500
-        hover:border-blue-700
-        hover:cursor-cell
-        hover:scale-105
-        shadow-md
-        shadow-white/10"
-
->
-    <slot />
-</span>
+<div class="flex items-center ">
+  <span class='inline-flex cursor-pointer items-center justify-center rounded-full border border-gray-800 bg-gray-950 px-3 py-1 text-xs font-medium text-gray-300 backdrop-blur-3xl'>
+    <span class='bg-gradient-to-t from-[#fff] to-[#8678f9] bg-clip-text text-transparent'>
+      <slot />
+    </span>
+  </span>
+  </div>
