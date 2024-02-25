@@ -96,7 +96,7 @@ const PROJECTS = [
             <div id="indicators-carousel" class="relative w-full h-full" data-carousel="static">
                 <!-- Carousel wrapper -->
                 {image.length > 1 ? (
-                    <div class="relative h-[285px] md:h-[555px] overflow-hidden rounded-lg">
+                    <div class="relative z-0 h-[285px] md:h-[555px] overflow-hidden rounded-lg">
                         <!-- Item 1 -->
                         {image.map((img, index) => (
                             <div class={`hidden duration-700 ease-in-out ${index === 0 ? 'block' : ''}`} data-carousel-item="active">
@@ -114,7 +114,7 @@ const PROJECTS = [
 
                 <!-- Slider indicators -->
                 {image.length > 1 && (
-                    <div class="absolute z-30 flex -translate-x-1/2 space-x-3 rtl:space-x-reverse bottom-5 left-1/2">
+                    <div class="absolute z-10 flex -translate-x-1/2 space-x-3 rtl:space-x-reverse bottom-5 left-1/2 my-custom-class">
                         {image.map((_, index) => (
                             <button
                                 type="button"

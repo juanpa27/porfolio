@@ -8,7 +8,7 @@
        
     `}
 >
-    <nav
+    <nav id="lista-nav"
         class={`
             border border-black
             px-3 py-1
@@ -20,19 +20,90 @@
         `}
     >
         <div class="max-w-screen-xl flex flex-wrap justify-center items-center mx-auto p-2">
-            <a
+            <a 
                 class="hover:bg-white/10 rounded-full px-3 transition"
-                href="/#experiencia">Experiencia</a
+                aria-label="experiencia"
+                href="/#experiencia">Experiencia
+                
+                </a
             >
             <a class="hover:bg-white/10 rounded-full px-3 transition" href="/#proyectos"
+                aria-label="proyectos"
                 >Proyectos</a
             >
-            <a class="hover:bg-white/10 rounded-full px-3 transition" href="/#sobre-mi"
+            <a class="hover:bg-white/10 rounded-full px-3 transition" href="/#sobremi"
+            aria-label="sobremi"
                 >Sobre mí</a
             >
-            <a class="hover:bg-white/10 rounded-full px-3 transition" href="/#contacto"
+            <a class="hover:bg-white/10 rounded-full px-3 transition" href="mailto:jbellenzier@gmail.com"
+            aria-label="contacto"
                 >Contacto</a
             >
         </div>
     </nav>
 </header>
+<script>
+    document.addEventListener("astro:page-load", () => {
+      const sections = document.querySelectorAll("section")
+      const navItems = document.querySelectorAll("header nav a")
+
+      
+  
+      const callback = (entries: any[]) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            navItems.forEach((item) => {
+              if (item.getAttribute("aria-label") == entry.target.id) {
+                //item.classList.add("text-yellow-500")
+                item.classList.add("bg-white/20")
+              } else {
+                //item.classList.remove("text-yellow-500")
+                item.classList.remove("bg-white/20")
+              }
+            })
+          }
+        })
+      }
+  
+      const observer = new IntersectionObserver(callback, {
+        root: null,
+        rootMargin: "0px",
+        threshold: 0.3, 
+      })
+  
+      sections.forEach((section) => {
+        observer.observe(section)
+      })
+  
+      // Cleanup function
+      document.onvisibilitychange = () => {
+        if (document.visibilityState === "hidden") {
+          observer.disconnect()
+        } else {
+          sections.forEach((section) => {
+            observer.observe(section)
+          })
+        }
+      }
+    })
+  </script>
+  
+  <style>
+    nav {
+      animation: nav-shadown 1s linear both;
+      animation-timeline: scroll();
+      animation-range: 0 100px;
+    }
+  
+    @keyframes nav-shadown {
+      to {
+        @apply shadow-lg ring-1 backdrop-blur ring-white/10;
+      }
+    }
+  </style>
+
+
+
+    
+    
+  
