@@ -12,7 +12,8 @@ import Github from "./icons/Github.astro";
 import Badge from "./Badge.astro";
 import SocialPill from "./icons/SocialPill.astro";
 import LinkButton from "./LinkButton.astro";
-
+import Vite from "./icons/Vite.astro";
+import Typescript from "./icons/Type.astro";
 
 const TAGS = {
     TAILWIND: {
@@ -49,11 +50,31 @@ const TAGS = {
         name: "PHP",
         class: "bg-[#777BB3] text-white",
         icon: Php,
+    },
+    VITE: {
+        name: "Vite",
+        class: "bg-[#646CFF] text-white",
+        icon: Vite,
+    },
+    TYPESCRIPT: {
+        name: "Typescript",
+        class: "bg-[#3178C6] text-white",
+        icon: Typescript,
     }
+    
+
 
 };
 
 const PROJECTS = [
+ {
+    title: 'Cotización del Dólar',
+    description: 'Aplicación web para ver la cotización del dólar en tiempo real con gráficos.', 
+    image: ['/images/dolar.webp'],
+    link: 'https://dolar-v3.vercel.app/',
+    github: 'https://github.com/juanpa27/dolarV3',
+    tags: [TAGS.TAILWIND, TAGS.REACT,TAGS.VITE,TAGS.TYPESCRIPT  ],
+  },
   {
     title: 'Consulta de Reposos',
     description: 'Formulario de consulta de reposos médicos con generación de PDF y código QR.',	
