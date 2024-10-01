@@ -23,5 +23,8 @@ npm run build	Construye el sitio de producción en ./dist/
 npm run preview	Previsualiza tu construcción localmente antes de implementar
 npm run astro ...	Ejecuta comandos de la CLI de Astro como astro add, astro check
 npm run astro -- --help	Obtiene ayuda usando la CLI de Astro
-👀 ¿Quieres aprender más?
-Siéntete libre de revisar nuestra documentación o unirte a nuestro servidor de Discord.
+
+
+## Atribución
+
+Este portafolio está basado en el trabajo de [@midudev](https://github.com/midudev). Muchas gracias por compartir tu conocimiento y recursos.
